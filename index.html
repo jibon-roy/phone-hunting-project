@@ -29,10 +29,26 @@
                 <img src="./img/phone.png" alt="phone" class="w-[40%] md:w-56">
                 <img src="./img/phone.png" alt="phone" class="w-[20%] md:w-36">
             </div>
-                
+
         </banner>
     </header>
-    <main></main>
+    <main>
+        <section class="container mx-auto">
+            <h1 class="my-7 text-3xl md:text-5xl text-center font-bold text-[#100F0F]">Search your phone</h1>
+            <form class="flex justify-center items-center my-10">
+                <input type="text" class="w-[50%] rounded-md py-4 rounded-tr rounded-br px-4 bg-[#100F0F0D]" placeholder="Search your phone"><input
+                    class="normal-case text-white py-4 px-7 rounded-tl rounded-bl rounded-md cursor-pointer bg-[#0D6EFD]"
+                    type="submit" value="Search">
+            </form>
+        </section>
+        <section>
+            <div class="container mx-auto box-border p-3">
+                <div id="phoneLoader" class="grid justify-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+                </div>
+            </div>
+        </section>
+    </main>
     <footer></footer>
     <script src="./scripts/fatch.js"></script>
 </body>

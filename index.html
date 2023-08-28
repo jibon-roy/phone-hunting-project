@@ -35,22 +35,31 @@
     <main>
         <section class="container mx-auto">
             <h1 class="my-7 text-3xl md:text-5xl text-center font-bold text-[#100F0F]">Search your phone</h1>
-            <form class="flex justify-center items-center my-10">
-                <input type="text" class="w-[50%] rounded-md py-4 rounded-tr rounded-br px-4 bg-[#100F0F0D]" placeholder="Search your phone"><input
-                    class="normal-case text-white py-4 px-7 rounded-tl rounded-bl rounded-md cursor-pointer bg-[#0D6EFD]"
-                    type="submit" value="Search">
-            </form>
+            <div class="flex justify-center items-center my-10">
+                <input type="text" id="search" class="w-[50%] rounded-md py-3 rounded-tr rounded-br px-4 bg-[#100F0F0D]" placeholder="Search your phone"><input
+                    class="normal-case text-white py-3 px-7 rounded-tl rounded-bl rounded-md cursor-pointer bg-[#0D6EFD]"
+                    type="button" onclick="formSubmit()" value="Search">
+            </d>
         </section>
         <section>
+            <div class="text-center" id="spinner">
+                <span class="loading loading-bars loading-lg text-center"></span>
+            </div>
             <div class="container mx-auto box-border p-3">
                 <div id="phoneLoader" class="grid justify-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
 
                 </div>
             </div>
+            <div id="show-all" class="hidden">
+                <button id="show-all-button"
+                class="mx-auto block mb-20 normal-case text-white py-2 px-7 rounded-md cursor-pointer bg-[#0D6EFD]">Show All
+                </button>
+            </div>
         </section>
     </main>
     <footer></footer>
-    <script src="./scripts/fatch.js"></script>
+    <!-- <script src="./scripts/fatch.js"></script> -->
+    <script src="./scripts/main.js"></script>
 </body>
 
 </html>

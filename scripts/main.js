@@ -1,32 +1,27 @@
 const phoneLoader = document.getElementById('phoneLoader');
 
-const loadPhone = async (searchText) => {
+const loadData = async (searchText) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText}`);
     const data = await res.json();
-    const phones = data.data;
-    displayPhones(phones);
+    const datas = data['data'];
+
+    dataLoader(datas);
+
 }
 
-const displayPhones = (phones) => {
-
+const dataLoader = (phones) => {
     phoneLoader.textContent = '';
 
-    // Check if phones.length > 12 and show the show all button
     const showAll = document.getElementById('show-all');
     if (phones.length > 12) {
         showAll.classList.remove('hidden');
-        // // Show all button
-        // const showButton = document.getElementById('show-all-button');
-        // showButton.addEventListener('click', () => {
-            
-        // })
     } else {
         showAll.classList.add('hidden');
     }
 
     phones = phones.slice(0, 12);
 
-    for (let phone of phones) {
+    phones.forEach(phone => {
         const card = document.createElement('div');
         card.innerHTML = `
         <div class="card bg-base-100 shadow-md">
@@ -43,14 +38,18 @@ const displayPhones = (phones) => {
         </div>
     `
         phoneLoader.appendChild(card);
-    }
+    });
+
 
 }
+
 
 const formSubmit = () => {
     const search = document.getElementById('search');
     const searchText = search.value;
 
-    loadPhone(searchText);
+    loadData(searchText);
     search.value = '';
 }
+
+window.addEventListener('load', loadData('iphone'))
